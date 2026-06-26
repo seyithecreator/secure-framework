@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% from "security/_macros.html" import render_field_with_errors %}
+{% from "security/_macros.html" import render_field_with_errors, render_password_field %}
 
 {% block title %}Register{% endblock %}
 
@@ -31,9 +31,9 @@
             {{ register_user_form.hidden_tag() }}
             {{ render_field_with_errors(register_user_form.username) }}
             {{ render_field_with_errors(register_user_form.email) }}
-            {{ render_field_with_errors(register_user_form.password) }}
+            {{ render_password_field(register_user_form.password) }}
             {% if register_user_form.password_confirm %}
-                {{ render_field_with_errors(register_user_form.password_confirm) }}
+                {{ render_password_field(register_user_form.password_confirm) }}
             {% endif %}
             <button type="submit" class="btn-auth-primary">Create Account</button>
         </form>

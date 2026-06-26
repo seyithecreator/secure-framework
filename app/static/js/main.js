@@ -16,4 +16,14 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     if (typeof lucide !== 'undefined') lucide.createIcons();
+
+    document.querySelectorAll('.pw-toggle').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            var input = btn.closest('.pw-wrap').querySelector('input');
+            var showing = input.type === 'text';
+            input.type = showing ? 'password' : 'text';
+            btn.querySelector('.pw-eye').style.display     = showing ? '' : 'none';
+            btn.querySelector('.pw-eye-off').style.display = showing ? 'none' : '';
+        });
+    });
 });

@@ -333,6 +333,24 @@ code {
 /* Form fields within auth */
 .auth-form .mb-4 { margin-bottom: 0 !important; }
 
+.pw-wrap { position: relative; }
+.pw-wrap .form-control { padding-right: 44px; }
+.pw-toggle {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    line-height: 1;
+}
+.pw-toggle:hover { color: var(--text); }
+
 /* ─── Landing / Hero ────────────────────────────────────────────── */
 .hero-section {
     text-align: center;
