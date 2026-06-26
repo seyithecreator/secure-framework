@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block title %}Secure Framework{% endblock %}
+{% block content %}
+
+<section class="hero-section">
+    <div class="hero-badge">Production-ready · Encrypted · Audited</div>
+    <h1 class="hero-title">Secure file transfer<br>and vault management</h1>
+    <p class="hero-sub">FTPS, SFTP, and an encrypted web vault — all in one hardened framework with TLS, brute-force protection, and config integrity auditing.</p>
+    <div class="hero-actions">
+        {% if current_user.is_authenticated %}
+            <a href="/dashboard" class="btn-hero-primary">Go to Dashboard</a>
+        {% else %}
+            <a href="/register" class="btn-hero-primary">Get Started Free</a>
+            <a href="/login" class="btn-hero-secondary">Sign In</a>
+        {% endif %}
+    </div>
+</section>
+
+<section class="features-section">
+    <div class="features-grid">
+        <div class="feature-card">
+            <div class="feature-icon" style="background:#f0fdf4;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#34c759" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </div>
+            <h3 class="feature-title">End-to-End Encryption</h3>
+            <p class="feature-desc">Files are encrypted with AES-256 (Fernet) before hitting disk. Decryption only happens in memory at download time — never stored in plaintext.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon" style="background:#fff5f5;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff3b30" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/></svg>
+            </div>
+            <h3 class="feature-title">Brute-Force Protection</h3>
+            <p class="feature-desc">Automatic IP blocking after failed login attempts across FTPS, SFTP, and the web interface. Configurable thresholds and block durations.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon" style="background:#f0f9ff;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0ea5e9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>
+            </div>
+            <h3 class="feature-title">Config Integrity Auditing</h3>
+            <p class="feature-desc">SHA-256 baseline snapshots of your config files. Run an audit anytime to detect unauthorized changes or configuration drift.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon" style="background:#fefce8;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ca8a04" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="8" x="2" y="2" rx="2"/><rect width="20" height="8" x="2" y="14" rx="2"/><line x1="6" x2="6.01" y1="6" y2="6"/><line x1="6" x2="6.01" y1="18" y2="18"/></svg>
+            </div>
+            <h3 class="feature-title">FTPS &amp; SFTP Servers</h3>
+            <p class="feature-desc">Run TLS-secured FTPS (pyftpdlib) and SSH-based SFTP (paramiko) alongside the web vault. All auth shares a single hardened user database.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon" style="background:#f5f3ff;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 6v6l4 2"/></svg>
+            </div>
+            <h3 class="feature-title">Rate Limiting &amp; HSTS</h3>
+            <p class="feature-desc">Flask-Limiter on every endpoint plus Talisman enforcing HSTS, strict CSP, and X-Frame-Options DENY — hardened out of the box.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon" style="background:#f0fdf4;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#34c759" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+            </div>
+            <h3 class="feature-title">Argon2 Password Hashing</h3>
+            <p class="feature-desc">Passwords are hashed with Argon2id — the 2015 Password Hashing Competition winner — resistant to GPU and side-channel attacks.</p>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
