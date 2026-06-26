@@ -35,7 +35,7 @@ def create_app(test_config=None):
         SECURITY_CHANGEABLE=True,
         SECURITY_FLASH_MESSAGES=True,
         SECURITY_USER_IDENTITY_ATTRIBUTES=[
-            {"username": {"case_insensitive": True}},
+            {"email": {"case_insensitive": True}},
         ],
         SECURITY_USERNAME_ENABLE=True,
         SECURITY_PASSWORD_HASH="argon2",
