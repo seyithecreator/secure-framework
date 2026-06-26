@@ -35,7 +35,6 @@ def create_app(test_config=None):
         SECURITY_CHANGEABLE=True,
         SECURITY_FLASH_MESSAGES=True,
         SECURITY_USER_IDENTITY_ATTRIBUTES=[
-            {"email": {"case_insensitive": True}},
             {"username": {"case_insensitive": True}},
         ],
         SECURITY_USERNAME_ENABLE=True,

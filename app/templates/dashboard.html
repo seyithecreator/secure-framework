@@ -5,7 +5,7 @@
 <div class="page-header">
     <div>
         <p class="page-eyebrow">Welcome back</p>
-        <h1 class="page-title">{{ current_user.email }}</h1>
+        <h1 class="page-title">{{ current_user.username }}</h1>
     </div>
     <div class="page-header-meta">
         <span class="status-dot online"></span>
@@ -34,7 +34,7 @@
         </div>
         <div class="dash-card-body">
             <h3 class="dash-card-title">My Account</h3>
-            <p class="dash-card-text">Signed in as <strong>{{ current_user.email }}</strong>.<br>Session is active and authenticated.</p>
+            <p class="dash-card-text">Signed in as <strong>{{ current_user.username }}</strong>.<br>Session is active and authenticated.</p>
         </div>
         <a href="/logout" class="dash-card-btn dash-card-btn-danger">
             Sign Out
